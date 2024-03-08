@@ -1,38 +1,145 @@
+/* variables */
+:root {
+  --bg-dark: #3c4047;
+  --bg-light: #D9D9D9;
+  --text-dark: #282c34;
+  --text-light: #FFFFFF;
+}
+
+/* typography */
+.text-xs {
+  font-size: 10px;
+}
+
+.text-s {
+  font-size: 12px;
+}
+
+.text-l {
+  font-size: 36px;
+}
+
+.light .text-secondary {
+  color: #919191;
+}
+
+.dark .text-secondary {
+  color: #FFFFFF;
+}
+/* typography end*/
+
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  max-width: 723px;
+  padding: 32px;
+}
+
+.light.App-header {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.dark.App-header {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.text-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 32px 0;
+  gap: 24px;
+  z-index: 10;
+  text-align: center;
+  max-width: calc((7/12) * 100% );
+}
+
+.text-content span {
+  color: #FF0000;
+}
+
+.toggle-btn {
+  border-radius: 29px;
+  background-color: #FF0000;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 12px 32px;
+  border: none;
+  width: max-content;
+  margin: auto;
+}
+
+.stats-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.text-content p,
+.stats p {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.stats:nth-child(1) {
+  text-align: start;
+}
+
+.stats:nth-child(2) {
+  text-align: end;
+  align-items: flex-end;
+}
+
+.hr {
+  width: 46px;
+  border-bottom: 1px solid;
+}
+
+.light .hr {
+  border-bottom-color: #000000;
+}
+
+.dark .hr {
+  border-bottom-color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .banner {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .text-content {
+    order: 1;
+    max-width: 100%;
+  }
+
+  .stats-container {
+    order: 2;
+    position: unset;
   }
 }
