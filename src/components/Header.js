@@ -1,4 +1,4 @@
-import { useTheme } from "../themeContext/context";
+import { useTheme } from "../context";
 import '../App.css';
 
 

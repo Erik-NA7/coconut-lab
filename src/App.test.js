@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
-import ThemeProvider from './themeContext/context';
+import ThemeProvider from './context';
 import '@testing-library/jest-dom';
 
 test('trigger theme switch button should change the text to TOGGLE LIGHT MODE', () => {
